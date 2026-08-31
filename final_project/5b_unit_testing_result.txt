@@ -1,0 +1,11 @@
+Task 5: Unit testing result
+
+$ cd final_project
+$ uv run --no-project --with 'pytest>=7,<9' --with 'requests>=2.31,<3' pytest -q test_emotion_detection.py
+
+.....                                                                    [100%]
+5 passed
+
+Result: All required unit tests passed successfully.
+Note: The Watson-compatible HTTP response is deterministic test data because
+the remote course endpoint is unavailable from this Replit network.
