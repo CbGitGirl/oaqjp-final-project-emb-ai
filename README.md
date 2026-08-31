@@ -19,7 +19,7 @@ https://github.com/ibm-developer-skills-network/oaqjp-final-project-emb-ai
 | 3 — Output formatting | `3a_output_formatting.py`, `3b_formatted_output_test.txt` |
 | 4 — Package validation | `final_project/EmotionDetection/__init__.py`, `final_project/4b_packaging_test.txt` |
 | 5 — Unit tests | `final_project/test_emotion_detection.py`, `final_project/5a_unit_testing.txt`, `final_project/5a_unit_testing.png`, `final_project/5b_unit_testing_result.txt` |
-| 6 — Flask deployment | `6a_server.py`, `6b_deployment_test.png` |
+| 6 — Flask deployment | `final_project/server.py`, `final_project/6a_server.txt` |
 | 7 — Error handling | `7a_error_handling_function.py`, `7b_error_handling_server.py`, `7c_error_handling_interface.png` |
 | 8 — Static analysis | `8a_server_modified.py`, `8b_static_code_analysis.txt` |
 
@@ -34,11 +34,12 @@ The Flask application provides:
 
 - `GET /` — browser interface
 - `GET /healthz` — deployment health check
-- `GET /emotionDetector?textToAnalyze=...` — JSON emotion result
+- `GET /emotionDetector?textToAnalyze=...` — customer-facing formatted emotion result
 - HTTP 400 with `Invalid text! Please try again!` for missing or blank input
 - HTTP 503 with an explicit error when Watson is unavailable
 
-The server reads `PORT` when deployed and defaults to port 5000 locally.
+The final-project server is configured for localhost port 5000, as required by
+the course deployment task.
 
 ## Setup and run
 
