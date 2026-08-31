@@ -18,7 +18,7 @@ https://github.com/ibm-developer-skills-network/oaqjp-final-project-emb-ai
 | 2 — Application function and import test | `2a_emotion_detection.py`, `2b_application_creation.txt` |
 | 3 — Output formatting | `3a_output_formatting.py`, `3b_formatted_output_test.txt` |
 | 4 — Package validation | `final_project/EmotionDetection/__init__.py`, `final_project/4b_packaging_test.txt` |
-| 5 — Unit tests | `5a_unit_testing.py`, `5b_unit_testing_result.txt` |
+| 5 — Unit tests | `final_project/test_emotion_detection.py`, `final_project/5a_unit_testing.txt`, `final_project/5a_unit_testing.png`, `final_project/5b_unit_testing_result.txt` |
 | 6 — Flask deployment | `6a_server.py`, `6b_deployment_test.png` |
 | 7 — Error handling | `7a_error_handling_function.py`, `7b_error_handling_server.py`, `7c_error_handling_interface.png` |
 | 8 — Static analysis | `8a_server_modified.py`, `8b_static_code_analysis.txt` |
