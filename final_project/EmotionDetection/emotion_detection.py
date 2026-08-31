@@ -20,14 +20,17 @@ def emotion_detector(text_to_analyze: str | None) -> dict[str, Any]:
     if not isinstance(text_to_analyze, str) or not text_to_analyze.strip():
         return {**{name: None for name in EMOTION_NAMES}, "dominant_emotion": None}
 
-    response = requests.post(
-        WATSON_NLP_URL,
-        headers={"grpc-metadata-mm-model-id": MODEL_NAME},
-        json={"raw_document": {"text": text_to_analyze}},
-        timeout=30,
-    )
-    response.raise_for_status()
-    emotion_scores = response.json()["emotion_prediction"]["emotion"]
+    try:
+        response = requests.post(
+            WATSON_NLP_URL,
+            headers={"grpc-metadata-mm-model-id": MODEL_NAME},
+            json={"raw_document": {"text": text_to_analyze}},
+            timeout=30,
+        )
+        response.raise_for_status()
+        emotion_scores = response.json()["emotion_prediction"]["emotion"]
+    except (requests.RequestException, KeyError, TypeError, ValueError) as error:
+        raise RuntimeError(f"Watson NLP request failed: {error}") from error
 
     anger_score = emotion_scores["anger"]
     disgust_score = emotion_scores["disgust"]
