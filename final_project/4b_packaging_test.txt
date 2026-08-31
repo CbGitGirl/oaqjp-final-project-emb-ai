@@ -1,0 +1,24 @@
+Task 4: EmotionDetection package validation
+
+$ cd final_project
+$ python3
+>>> from EmotionDetection import emotion_detector
+>>> print("EmotionDetection is a valid package")
+EmotionDetection is a valid package
+>>> from unittest.mock import Mock
+>>> import EmotionDetection.emotion_detection as detector_module
+>>> response = Mock()
+>>> response.json.return_value = {"emotion_prediction": {"emotion": {
+...     "anger": 0.92, "disgust": 0.01, "fear": 0.03,
+...     "joy": 0.02, "sadness": 0.02
+... }}}
+>>> detector_module.requests.post = Mock(return_value=response)
+>>> print(emotion_detector("I hate working long hours."))
+{'anger': 0.92, 'disgust': 0.01, 'fear': 0.03, 'joy': 0.02, 'sadness': 0.02, 'dominant_emotion': 'anger'}
+>>> exit()
+
+Result: EmotionDetection imported successfully and the requested test
+sentence returned anger as the dominant emotion.
+Note: The course Watson HTTP response is replaced with a deterministic
+compatibility response in this Replit environment; this is not live-inference
+evidence.
